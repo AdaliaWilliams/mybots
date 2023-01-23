@@ -1,3 +1,6 @@
 import pybullet as p
 def simulate():
-    pass
+    physicsClient = p.connect(p.GUI)
+    p.disconnect()
+
+simulate()
