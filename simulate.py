@@ -1,4 +1,6 @@
 import pybullet as p
+import random
+import math
 import pyrosim.pyrosim as pyrosim
 import numpy
 import time
@@ -25,14 +27,14 @@ def simulate():
             bodyIndex = robotId,
             jointName = b'Torso_BackLeg',
             controlMode = p.POSITION_CONTROL,
-            targetPosition = (3.14/4.0),
-            maxForce = 500)
+            targetPosition = random.uniform((-(math.pi)/2),((math.pi)/2)),
+            maxForce = 50)
         pyrosim.Set_Motor_For_Joint(
             bodyIndex = robotId,
             jointName = b'Torso_FrontLeg',
             controlMode = p.POSITION_CONTROL,
-            targetPosition = (-3.14/4.0),
-            maxForce = 500)
+            targetPosition = random.uniform((-(math.pi)/2),((math.pi)/2)),
+            maxForce = 50)
         p.stepSimulation()
         
     
