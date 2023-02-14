@@ -5,9 +5,12 @@ import numpy
 import time
 import pybullet_data
 
-amplitude = numpy.pi/4
-frequency = 10
-phaseOffset = 0
+amplitudeBackLeg = -1*5*numpy.pi
+frequencyBackLeg = 15
+phaseOffsetBackLeg = numpy.pi/2
+amplitudeFrontLeg = 5*numpy.pi
+frequencyFrontLeg = 12
+phaseOffsetFrontLeg = -1*numpy.pi/2
 
 def simulate():
     
@@ -22,39 +25,41 @@ def simulate():
     
 
     nums = 2* numpy.pi*(numpy.arange(1000) / 1000)
-    targetAngles = numpy.sin(frequency * nums+phaseOffset)*(amplitude)
-    print(targetAngles)
+    targetAnglesBackLeg = numpy.sin(frequencyBackLeg * nums+phaseOffsetBackLeg)*(amplitudeBackLeg)
+    targetAnglesFrontLeg = numpy.sin(frequencyFrontLeg* nums+phaseOffsetFrontLeg)*(amplitudeFrontLeg)
+    #print(targetAnglesBackLeg)
 
     #print(targetAngles)
     #targetAngles= targetAngles/100
     #targetAngles = targetAngles*(numpy.pi/4)
     #targetAngles= numpy.sin(targetAngles)
 
-    numpy.save('data/targetAngles.npy', targetAngles)
+    #numpy.save('data/targetAnglesBackLeg.npy', targetAnglesBackLeg)
+    #numpy.save('data/targetAnglesFrontLeg.npy', targetAnglesFrontLeg)
     
 
     pyrosim.Prepare_To_Simulate(robotId) 
     
-    exit()
+    #exit()
     for i in range(1000):
         #print(i)
         backLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("BackLeg")
         frontLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("FrontLeg")
-        time.sleep(1/240)
+        time.sleep(1/60)
         pyrosim.Set_Motor_For_Joint(
             bodyIndex = robotId,
             jointName = b'Torso_BackLeg',
             controlMode = p.POSITION_CONTROL,
-            targetPosition= amplitude* (numpy.sin(frequency* i +phaseOffset)),
+            targetPosition= amplitudeBackLeg* numpy.sin(frequencyBackLeg*i +phaseOffsetBackLeg),
             #targetPosition = random.uniform(((-1)*(numpy.pi)/2),((numpy.pi)/2)),
-            maxForce = 5)
+            maxForce = 50)
         pyrosim.Set_Motor_For_Joint(
             bodyIndex = robotId,
             jointName = b'Torso_FrontLeg',  
             controlMode = p.POSITION_CONTROL,
-            targetPosition=amplitude* (numpy.sin(frequency* i +phaseOffset)) ,
+            targetPosition=amplitudeFrontLeg * numpy.sin(frequencyFrontLeg*i+ phaseOffsetFrontLeg) ,
             #targetPosition = random.uniform(((-1)*(numpy.pi)/2),((numpy.pi)/2)),
-            maxForce = 5)
+            maxForce = 50)
         p.stepSimulation()
         
     
