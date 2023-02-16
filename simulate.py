@@ -5,8 +5,10 @@ import numpy
 import time
 import pybullet_data
 import constants as c
+from simulation import SIMULATION
 
 
+simulation = SIMULATION()
 # amplitudeBackLeg = c.AMPB
 # frequencyBackLeg = c.FREQUENCYB
 # phaseOffsetBackLeg = c.PHASEB
