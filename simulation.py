@@ -12,8 +12,31 @@ class SIMULATION:
     def __init__(self):
         self.world= WORLD()
         self.robot = ROBOT()
-        self.physicsClient = p.connect(p.GUI)
-        p.setGravity(0,0,-c.GRAVITY)
-        p.setAdditionalSearchPath(pybullet_data.getDataPath())
         pyrosim.Prepare_To_Simulate(self.robot.robotId) 
+        ROBOT.Prepare_To_Sense()
         
+    def Run(self):
+        for i in range(c.RANGE):
+            print(i)
+        
+        # backLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("BackLeg")
+        # frontLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("FrontLeg")
+            time.sleep(c.SLEEP)
+        # pyrosim.Set_Motor_For_Joint(
+        #     bodyIndex = robotId,
+        #     jointName = b'Torso_BackLeg',
+        #     controlMode = p.POSITION_CONTROL,
+        #     targetPosition= amplitudeBackLeg* numpy.sin(frequencyBackLeg*i +phaseOffsetBackLeg),
+        #     #targetPosition = random.uniform(((-1)*(numpy.pi)/2),((numpy.pi)/2)),
+        #     maxForce = c.MAXFORCE)
+        # pyrosim.Set_Motor_For_Joint(
+        #     bodyIndex = robotId,
+        #     jointName = b'Torso_FrontLeg',  
+        #     controlMode = p.POSITION_CONTROL,
+        #     targetPosition=amplitudeFrontLeg * numpy.sin(frequencyFrontLeg*i+ phaseOffsetFrontLeg) ,
+        #     #targetPosition = random.uniform(((-1)*(numpy.pi)/2),((numpy.pi)/2)),
+        #     maxForce = c.MAXFORCE)
+            p.stepSimulation() 
+    
+    def __del__(self):
+        p.disconnect()

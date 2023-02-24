@@ -8,3 +8,6 @@ class ROBOT:
         self.sensors = SENSOR()
         self.motor = MOTOR()
         self.robotId = p.loadURDF("body.urdf")
+    
+    def Prepare_To_Sense(self):
+        

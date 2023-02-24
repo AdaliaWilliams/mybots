@@ -9,6 +9,7 @@ from simulation import SIMULATION
 
 
 simulation = SIMULATION()
+simulation.Run()
 # amplitudeBackLeg = c.AMPB
 # frequencyBackLeg = c.FREQUENCYB
 # phaseOffsetBackLeg = c.PHASEB
@@ -68,7 +69,7 @@ simulation = SIMULATION()
 #         p.stepSimulation()
         
     
-#     p.disconnect()
+
 #     #print(backLegSensorValues)
 #     numpy.save('data/backLegSensorValues.npy', backLegSensorValues)
 #     numpy.save('data/frontLegSensorValues.npy', frontLegSensorValues)
