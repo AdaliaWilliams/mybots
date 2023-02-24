@@ -1,4 +1,4 @@
-import pybullet as p
+#import pybullet as p
 import random
 import pyrosim.pyrosim as pyrosim
 import numpy
@@ -43,7 +43,7 @@ simulation = SIMULATION()
 #     #numpy.save('data/targetAnglesFrontLeg.npy', targetAnglesFrontLeg)
     
 
-#     pyrosim.Prepare_To_Simulate(robotId) 
+#     
     
 #     #exit()
 #     for i in range(c.RANGE):

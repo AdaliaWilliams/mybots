@@ -1,5 +1,10 @@
+import pybullet as p
+from sensor import SENSOR
+from motor import MOTOR
+
 class ROBOT:
     def __init__(self):
-        robot = ROBOT()
+        self.robot = ROBOT
         self.sensors = SENSOR()
-        self.motors = MOTORS()
+        self.motor = MOTOR()
+        self.robotId = p.loadURDF("body.urdf")
