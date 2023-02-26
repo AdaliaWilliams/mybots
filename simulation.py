@@ -12,8 +12,7 @@ class SIMULATION:
     def __init__(self):
         self.world= WORLD()
         self.robot = ROBOT()
-        pyrosim.Prepare_To_Simulate(self.robot.robotId) 
-        ROBOT.Prepare_To_Sense()
+        
         
     def Run(self):
         for i in range(c.RANGE):
