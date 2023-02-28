@@ -6,17 +6,18 @@ import pybullet as p
 
 class MOTOR:
     def __init__(self, jointName):
-        world = MOTOR
+        #self.motor = MOTOR
         self.jointName = jointName
-        self.motorValues = []
+        self.motorValues = 0
         
 
     def Set_Value(self,i,robotId):
+        
+        self.motorValues = c.AMP * numpy.sin(c.FREQUENCY*i + c.PHASE)
         pyrosim.Set_Motor_For_Joint(
-             bodyIndex = robotId,
-             jointName = self.jointName,  
-             controlMode = p.POSITION_CONTROL,
-             targetLocation= self.motorValues ,
-             targetPosition = random.uniform(((-1)*(numpy.pi)/2),((numpy.pi)/2)),
-             maxForce = c.MAXFORCE)
+            bodyIndex = robotId,
+            jointName = self.jointName,  
+            controlMode = p.POSITION_CONTROL,
+            targetPosition= self.motorValues ,
+            maxForce = c.MAXFORCE)
 
