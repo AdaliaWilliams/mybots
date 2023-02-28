@@ -43,5 +43,5 @@ class ROBOT:
     def Act(self,t):
         for jointName in self.motors:
             print(jointName)
-            self.motors[jointName].Set_Value(t,self.robot)
+            self.motors[jointName].Set_Value(t,self.robotId)
          
