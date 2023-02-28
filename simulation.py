@@ -19,22 +19,9 @@ class SIMULATION:
             print(t)
         
             time.sleep(c.SLEEP)
-        # pyrosim.Set_Motor_For_Joint(
-        #     bodyIndex = robotId,
-        #     jointName = b'Torso_BackLeg',
-        #     controlMode = p.POSITION_CONTROL,
-        #     targetPosition= amplitudeBackLeg* numpy.sin(frequencyBackLeg*i +phaseOffsetBackLeg),
-        #     #targetPosition = random.uniform(((-1)*(numpy.pi)/2),((numpy.pi)/2)),
-        #     maxForce = c.MAXFORCE)
-        # pyrosim.Set_Motor_For_Joint(
-        #     bodyIndex = robotId,
-        #     jointName = b'Torso_FrontLeg',  
-        #     controlMode = p.POSITION_CONTROL,
-        #     targetPosition=amplitudeFrontLeg * numpy.sin(frequencyFrontLeg*i+ phaseOffsetFrontLeg) ,
-        #     #targetPosition = random.uniform(((-1)*(numpy.pi)/2),((numpy.pi)/2)),
-        #     maxForce = c.MAXFORCE)
             p.stepSimulation() 
             self.robot.SENSE(t)
+            #self.robot.Act()
     
     def __del__(self):
         p.disconnect()

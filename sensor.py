@@ -8,13 +8,13 @@ class SENSOR:
         #self.sensor = SENSOR
         self.linkName = linkName
         self.values = []
-        frontLegSensorValues = numpy.zeros(c.RANGE)
+        self.sensorValues = numpy.zeros(c.RANGE)
         
-
+        
     def Get_Value(self, i): 
-        print(self.values)
-        self.values.append(pyrosim.Get_Touch_Sensor_Value_For_Link(self.linkName))
         
+        self.values.append(pyrosim.Get_Touch_Sensor_Value_For_Link(self.linkName))
+        print(self.values)
         #print(self.values)
         
 
