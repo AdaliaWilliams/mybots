@@ -16,12 +16,15 @@ class SIMULATION:
         
     def Run(self):
         for t in range(c.RANGE):
-            print(t)
+            #print(t)
         
             time.sleep(c.SLEEP)
             p.stepSimulation() 
             self.robot.SENSE(t)
             self.robot.Act(t)
+            
     
     def __del__(self):
         p.disconnect()
+
+    

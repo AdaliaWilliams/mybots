@@ -31,10 +31,10 @@ class ROBOT:
     def SENSE(self, t):
 
         for linkName in self.sensors:
-           
             #print(self.sensors.get(linkName)) 
             #print(self.sensors[linkName])
             self.sensors[linkName].Get_Value(t)
+            self.sensors[linkName].Save_Values()
             #print(linkName) 
             #SENSOR(linkName).Get_Value(t)
             #SENSOR(i).Get_Value(t, i)
@@ -42,6 +42,10 @@ class ROBOT:
 
     def Act(self,t):
         for jointName in self.motors:
-            print(jointName)
+            #print(jointName)
             self.motors[jointName].Set_Value(t,self.robotId)
+            self.motors[jointName].Save_Values()
+    
+    
+
          

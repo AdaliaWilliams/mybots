@@ -64,7 +64,7 @@ simulation.Run()
 #             jointName = b'Torso_FrontLeg',  
 #             controlMode = p.POSITION_CONTROL,
 #             targetPosition=amplitudeFrontLeg * numpy.sin(frequencyFrontLeg*i+ phaseOffsetFrontLeg) ,
-#             #targetPosition = random.uniform(((-1)*(numpy.pi)/2),((numpy.pi)/2)),
+#             #targetPosition = random.uniform(((-1)*(numpy.pi)/2),((numpy.pi)/2))
 #             maxForce = c.MAXFORCE)
 #         p.stepSimulation()
         
