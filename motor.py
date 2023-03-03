@@ -24,13 +24,13 @@ class MOTOR:
             targetPosition= desiredAngle,
             maxForce = c.MAXFORCE)
         
-    def Save_Values(self):
-        nums = c.TWO* numpy.pi*(numpy.arange(c.RANGE) / c.RANGE)
-        targetAngles1= numpy.sin(c.FREQUENCY * nums+c.PHASE)*(c.AMP)
-        #print(targetAngles1)
-        targetAngles= targetAngles1/100
-        targetAngles = targetAngles*(numpy.pi/4)
-        targetAngles= numpy.sin(targetAngles)
-        numpy.save('data/targetAnglesBackLeg.npy', targetAngles)
+    # def Save_Values(self):
+    #     nums = c.TWO* numpy.pi*(numpy.arange(c.RANGE) / c.RANGE)
+    #     targetAngles1= numpy.sin(c.FREQUENCY * nums+c.PHASE)*(c.AMP)
+    #     #print(targetAngles1)
+    #     targetAngles= targetAngles1/100
+    #     targetAngles = targetAngles*(numpy.pi/4)
+    #     targetAngles= numpy.sin(targetAngles)
+    #     numpy.save('data/targetAnglesBackLeg.npy', targetAngles)
 
 

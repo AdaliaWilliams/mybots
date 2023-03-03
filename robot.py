@@ -53,9 +53,9 @@ class ROBOT:
                 elif jointName == 'Torso_FrontLeg':
                     jointName = b'Torso_FrontLeg'
                 self.motors[jointName].Set_Value(desiredAngle,self.robotId)
-                print(neuronName)
-                print(jointName)
-                print(desiredAngle)
+                # print(neuronName)
+                # print(jointName)
+                # print(desiredAngle)
                 
 
         #for jointName in self.motors:
