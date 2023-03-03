@@ -44,10 +44,24 @@ class ROBOT:
             #self.sensors.get(i).getValue(t)
 
     def Act(self,t):
-        for jointName in self.motors:
+        for neuronName in self.nn.Get_Neuron_Names():
+            if self.nn.Is_Motor_Neuron(neuronName):
+                jointName = self.nn.Get_Motor_Neurons_Joint(neuronName)
+                desiredAngle = self.nn.Get_Value_Of(neuronName)
+                if jointName == 'Torso_BackLeg':
+                    jointName = b'Torso_BackLeg'
+                elif jointName == 'Torso_FrontLeg':
+                    jointName = b'Torso_FrontLeg'
+                self.motors[jointName].Set_Value(desiredAngle,self.robotId)
+                print(neuronName)
+                print(jointName)
+                print(desiredAngle)
+                
+
+        #for jointName in self.motors:
             #print(jointName)
-            self.motors[jointName].Set_Value(t,self.robotId)
-            self.motors[jointName].Save_Values()
+            #self.motors[jointName].Set_Value(t,self.robotId)
+            #self.motors[jointName].Save_Values()
     
     
 
