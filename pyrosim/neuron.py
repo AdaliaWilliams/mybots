@@ -86,26 +86,11 @@ class NEURON:
             if self.Get_Name() == synapses[key].Get_Target_Neuron_Name():
                 self.Allow_Presynaptic_Neuron_To_Influence_Me(synapses[key].Get_Weight(), neurons[key[0]].Get_Value())
         
-        # self.value = 0.0
-        # #neurons = 0.0
-        # #print(neurons)
-        # print(self.value)
-        # for key in synapses.keys():
-        #     print(synapses[key].Get_Target_Neuron_Name())
-
-        # for synapse in synapses:
+        self.Threshold()
+        print("end value =" , self.Get_Value())
         
-        #     #get the second element in the tuple
-        #     element = synapse[1]
-        #     #print(element)
-        #     #print(self.Get_Name())
-        #     if (element == self.Get_Name()):
-        #         #print the names of the pre and postsynapic neurons 
-        #         self.Allow_Presynaptic_Neuron_To_Influence_Me(synapses[synapse].Get_Weight(), neurons[self.Get_Name()].Get_Value())
-        #         #print(synapse[0])
-        #         #print(synapse[1])
-        print("final value =" , self.Get_Value())
-        exit()
+       
+        
         
         
     
