@@ -7,7 +7,7 @@ class SENSOR:
     def __init__(self, linkName):
         #self.sensor = SENSOR
         self.linkName = linkName
-        self.values = numpy.zeros(c.RANGE)
+        self.values = numpy.ones(c.RANGE)
         
     
         

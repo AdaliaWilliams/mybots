@@ -31,6 +31,7 @@ class NEURAL_NETWORK:
     def Update(self):
          
         for neuronName in self.neurons:
+            self.neurons[neuronName].Set_Value(1.0)
             if self.neurons[neuronName].Is_Sensor_Neuron():
                 pass
             else:
