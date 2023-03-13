@@ -1,20 +1,20 @@
 import numpy
 
 
-AMP = 5*numpy.pi
+AMP = 11*numpy.pi
 
 
-AMPB = -1*5*numpy.pi
-AMPF = 5*numpy.pi
-FREQUENCY = 15
+AMPB = 12*numpy.pi
 
-PHASEB = -1*numpy.pi/2
-PHASE = 1*numpy.pi/2
+FREQUENCY =13
 
-FREQUENCYB = 15
-FREQUENCY = 10
+PHASEB = 1*numpy.pi/4
+PHASE = 1*numpy.pi/4
+
+FREQUENCYB = 13
+
 GRAVITY = 9.8
-RANGE = 100
+RANGE = 1000
 TWO = 2
-MAXFORCE = 50
+MAXFORCE = 65
 SLEEP = 1/60

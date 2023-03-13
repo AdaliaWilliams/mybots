@@ -17,9 +17,9 @@ class MOTOR:
         if(self.jointName==b'Torso_BackLeg'):
             self.motorValues= numpy.sin(c.FREQUENCY*t + c.PHASE*desiredAngle)* c.AMP
         else:
-            self.motorValues= -1* numpy.sin(c.FREQUENCY*t + c.PHASE*desiredAngle)* c.AMP
-        print("motor values: ", self.motorValues)
-        print("angle: ", desiredAngle)
+            self.motorValues= -1*numpy.sin(c.FREQUENCYB*t + c.PHASEB*desiredAngle)*c.AMPB
+            #self.motorValues= -1*numpy.sin(c.FREQUENCY*t + c.PHASE*desiredAngle)* c.AMP
+       
 
         pyrosim.Set_Motor_For_Joint(
             bodyIndex = robotId,
