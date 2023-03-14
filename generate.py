@@ -11,7 +11,7 @@ def Create_World():
 def Loops():
     
     for i in range(3):
-        print("i value:", i)
+        #print("i value:", i)
         if i == 0:
             pyrosim.Send_Sensor_Neuron(name = 0 , linkName = "Torso")
         if i == 1:
@@ -19,7 +19,7 @@ def Loops():
         if i == 2:
             pyrosim.Send_Sensor_Neuron(name = 2 , linkName = "FrontLeg")
         for j in range(2): 
-            print("j value:", j)
+            #print("j value:", j)
             if j == 0:
                 pyrosim.Send_Motor_Neuron( name = 3 , jointName = "Torso_BackLeg")
             if j == 1:
