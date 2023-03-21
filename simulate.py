@@ -6,12 +6,13 @@ import time
 import pybullet_data
 import constants as c
 from simulation import SIMULATION
+import os
 
 
 
 simulation = SIMULATION()
 simulation.Run()
-simulation.Get_Fitness()
+
 
 # amplitudeBackLeg = c.AMPB
 # frequencyBackLeg = c.FREQUENCYB

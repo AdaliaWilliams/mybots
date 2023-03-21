@@ -1,7 +1,7 @@
 import numpy
 
 
-numberOfGenerations = 2
+
 AMP = 11*numpy.pi
 
 
