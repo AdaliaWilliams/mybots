@@ -12,7 +12,7 @@ import os
 
 simulation = SIMULATION()
 simulation.Run()
-
+simulation.Get_Fitness()
 
 # amplitudeBackLeg = c.AMPB
 # frequencyBackLeg = c.FREQUENCYB

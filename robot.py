@@ -63,7 +63,16 @@ class ROBOT:
             #self.motors[jointName].Set_Value(t,self.robotId)
             #self.motors[jointName].Save_Values()
     
-    
+    def Get_Fitness(self):
+        stateOfLinkZero = p.getLinkState(self.robotId,0)
+        positionOfLinkZero = stateOfLinkZero[0]
+        xCoordinateOfLinkZero = positionOfLinkZero[0]
+        print("position values (x,y,z): ",positionOfLinkZero)
+        print("position value of x: ",xCoordinateOfLinkZero)
+        f = open("fitness.txt", "w")
+        f.write(str(xCoordinateOfLinkZero))
+        f.close()
+
 
     def Think(self):
         self.nn.Update()

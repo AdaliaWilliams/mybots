@@ -23,6 +23,9 @@ class SIMULATION:
             self.robot.SENSE(t)
             self.robot.Think()
             self.robot.Act(t)
+
+    def Get_Fitness(self):
+        self.robot.Get_Fitness()
             
     
     def __del__(self):
