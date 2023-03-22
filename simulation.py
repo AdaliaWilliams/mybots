@@ -9,7 +9,11 @@ from world import WORLD
 from robot import ROBOT
 
 class SIMULATION:
-    def __init__(self):
+    def __init__(self, directOrGUI):
+        if directOrGUI == "GUI":
+            self.physicsClient = p.connect(p.GUI)
+        elif directOrGUI == "DIRECT":
+            self.physicsClient = p.connect(p.DIRECT)
         self.world= WORLD()
         self.robot = ROBOT()
         
