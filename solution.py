@@ -14,9 +14,9 @@ class SOLUTION:
         self.Create_Body()
         self.Create_Brain()
         if DirectOrGui == "DIRECT":
-            os.system("python3 simulate.py DIRECT")
+            os.system("python3 simulate.py DIRECT  &")
         elif  DirectOrGui == "GUI":
-            os.system("python3 simulate.py GUI")
+            os.system("python3 simulate.py GUI &")
         f = open("fitness.txt", "r")
         self.fitness = float(f.readline())
         f.close()
