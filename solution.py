@@ -19,9 +19,11 @@ class SOLUTION:
         self.Create_Body()
         self.Create_Brain()
         if DirectOrGui == "DIRECT":
-            os.system("python3 simulate.py DIRECT  &")
+            systemCommand = "python3 simulate.py DIRECT " + str(self.myID) + " &"
+            os.system(systemCommand)
         elif  DirectOrGui == "GUI":
-            os.system("python3 simulate.py GUI &")
+            systemCommand = "python3 simulate.py GUI " + str(self.myID) + " &"
+            os.system(systemCommand)
         f = open("fitness.txt", "r")
         self.fitness = float(f.readline())
         f.close()
@@ -49,7 +51,8 @@ class SOLUTION:
         pyrosim.End()
 
     def Create_Brain(self):
-        pyrosim.Start_NeuralNetwork("brain.nndf")
+        brainFile = "brain"+ str(self.myID) + ".nndf"
+        pyrosim.Start_NeuralNetwork(brainFile)
         for currentRow in range(3):
         #print("i value:", i)
             if currentRow == 0:

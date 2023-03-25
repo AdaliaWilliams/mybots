@@ -6,16 +6,20 @@ import numpy
 import random
 import constants as c
 from pyrosim.neuralNetwork import NEURAL_NETWORK
+import os
 
 
 class ROBOT:
-    def __init__(self):
+    def __init__(self,solutionID):
+        brainFile= "brain"+solutionID+".nndf"
         self.robot = ROBOT
         self.robotId = p.loadURDF("body.urdf")
         pyrosim.Prepare_To_Simulate(self.robotId) 
         self.Prepare_To_Sense()
         self.Prepare_To_Act()
-        self.nn = NEURAL_NETWORK("brain.nndf")
+        self.nn = NEURAL_NETWORK(brainFile)
+        removeCommand = "rm "+ brainFile
+        os.system(removeCommand)
     
     def Prepare_To_Sense(self):
         self.sensors = {}
