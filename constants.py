@@ -1,6 +1,7 @@
 import numpy
 
 numberOfGenerations = 10
+populationSize = 2
 
 AMP = 11*numpy.pi
 
